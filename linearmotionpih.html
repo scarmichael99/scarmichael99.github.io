@@ -1,0 +1,1343 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+
+<head>
+
+
+<!-- graph paper background courtesy of rachelbaker (https://gist.github.com/rachelbaker/1322975)-->
+<style>
+html { 
+    font-size: 93.8%;    
+    background-color: #f1f2f3; 
+    background-image: 
+      -webkit-linear-gradient(0deg, transparent .05em, rgba(0,0,0,.05) .05em, rgba(0,0,0,.05) .125000em, transparent .125000em),
+      -webkit-linear-gradient(rgba(0,0,0,.05) .062500em, transparent .062500em);
+    background-image: 
+      -moz-linear-gradient(0deg, transparent .05em, rgba(0,0,0,.05) .05em, rgba(0,0,0,.05) .125000em, transparent .125000em),
+      -moz-linear-gradient(rgba(0,0,0,.05) .062500em, transparent .062500em);
+    background-image: 
+      -ms-linear-gradient(0deg, transparent .05em, rgba(0,0,0,.05) .05em, rgba(0,0,0,.05) .125000em, transparent .125000em),
+      -ms-linear-gradient(rgba(0,0,0,.05) .062500em, transparent .062500em);
+    background-image: 
+      -o-linear-gradient(0deg, transparent .05em, rgba(0,0,0,.05) .05em, rgba(0,0,0,.05) .125000em, transparent .125000em),
+      -o-linear-gradient(rgba(0,0,0,.05) .062500em, transparent .062500em);
+    background-image: 
+      linear-gradient(0deg, transparent .05em, rgba(0,0,0,.05) .05em, rgba(0,0,0,.05) .125000em, transparent .125000em),
+      inear-gradient(rgba(0,0,0,.05) .062500em, transparent .062500em);
+    background-size: .75em .75em;  
+    background-position: 0 -0.5em; 
+}
+
+@media screen and (min-width: 600px) { 
+    html { 
+        font-size: 100%; 
+    }
+}
+
+@media screen and (min-width: 800px) { 
+    html { 
+        font-size: 125%; 
+    }
+}
+</style>
+
+
+<!-- table formatting from http://www.csstablegenerator.com/-->
+<style>
+.CSSTableGenerator {
+	margin-left:40px;
+	margin-right:40px;
+	padding:0px;
+	
+	border:1px solid #ffffff;
+	
+	-moz-border-radius-bottomleft:3px;
+	-webkit-border-bottom-left-radius:3px;
+	border-bottom-left-radius:3px;
+	
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;
+	border-bottom-right-radius:3px;
+	
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius:3px;
+	
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-left-radius:3px;
+	border-top-left-radius:3px;
+}.CSSTableGenerator table{
+    border-collapse: collapse;
+        border-spacing: 0;
+	width:100%;
+	height:100%;
+	margin:0px;padding:0px;
+}.CSSTableGenerator tr:last-child td:last-child {
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;
+	border-bottom-right-radius:3px;
+}
+.CSSTableGenerator table tr:first-child td:first-child {
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-left-radius:3px;
+	border-top-left-radius:3px;
+}
+.CSSTableGenerator table tr:first-child td:last-child {
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius:3px;
+}.CSSTableGenerator tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:3px;
+	-webkit-border-bottom-left-radius:3px;
+	border-bottom-left-radius:3px;
+}.CSSTableGenerator tr:hover td{
+	background-color:#ffffff;
+		
+}
+.CSSTableGenerator td{
+	vertical-align:middle;
+		background:-o-linear-gradient(bottom, #e5e5e5 5%, #ffffff 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e5e5e5), color-stop(1, #ffffff) ); 
+	background:-moz-linear-gradient( center top, #e5e5e5 5%, #ffffff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#e5e5e5", endColorstr="#ffffff");	background: -o-linear-gradient(top,#e5e5e5,ffffff);
+
+	background-color:#e5e5e5;
+
+	border:1px solid #ffffff;
+	border-width:0px 1px 1px 0px;
+	text-align:center;
+	padding:11px;
+	font-size:16px;
+	font-family:Arial;
+	font-weight:normal;
+	color:#000000;
+}.CSSTableGenerator tr:last-child td{
+	border-width:0px 1px 0px 0px;
+}.CSSTableGenerator tr td:last-child{
+	border-width:0px 0px 1px 0px;
+}.CSSTableGenerator tr:last-child td:last-child{
+	border-width:0px 0px 0px 0px;
+}
+.CSSTableGenerator tr:first-child td{
+		background:-o-linear-gradient(bottom, #e5e5e5 5%, #ffffff 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e5e5e5), color-stop(1, #ffffff) );
+	background:-moz-linear-gradient( center top, #e5e5e5 5%, #ffffff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#e5e5e5", endColorstr="#ffffff");	background: -o-linear-gradient(top,#e5e5e5,ffffff);
+
+	background-color:#e5e5e5;
+	border:0px solid #ffffff;
+	text-align:center;
+	border-width:0px 0px 1px 1px;
+	font-size:16px;
+	font-family:Arial;
+	
+	color:#000000;
+}
+.CSSTableGenerator tr:first-child:hover td{
+	background:-o-linear-gradient(bottom, #e5e5e5 5%, #ffffff 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e5e5e5), color-stop(1, #ffffff) );
+	background:-moz-linear-gradient( center top, #e5e5e5 5%, #ffffff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#e5e5e5", endColorstr="#ffffff");	background: -o-linear-gradient(top,#e5e5e5,ffffff);
+
+	background-color:#e5e5e5;
+}
+.CSSTableGenerator tr:first-child td:first-child{
+	border-width:0px 0px 1px 0px;
+}
+.CSSTableGenerator tr:first-child td:last-child{
+	border-width:0px 0px 1px 1px;
+}
+</style>
+
+
+<!--text margins -->
+<style>
+p {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+</style>
+
+<style>
+div.math-header {
+    background-color: #e0ffff;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+</style>
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+
+<title>Infinite Practice Worksheet - Linear Motion </title>
+
+<!-- I don't know what any of this stuff does or if I even need all of it anymore-->
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="shortcut icon" href="http://www.mathjax.org/wp-content/themes/mathjax/images/favicon.ico">
+<link rel="stylesheet" type="text/css" media="all" href="http://www.mathjax.org/wp-content/themes/mathjax/style.css" />
+<script type='text/javascript' src='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/scripts/shCore.js'></script>
+<script type='text/javascript' src='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/scripts/shAutoloader.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<link type='text/css' rel='stylesheet' href='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/styles/shCore.css'/>
+<link type='text/css' rel='stylesheet' href='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/styles/shThemeDefault.css'/>
+
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #d2d3d3; }
+</style>
+
+</head>
+
+
+
+
+
+<script>
+$(document).ready(function() {
+$('showhide').hide();
+});
+</script>
+
+
+<script type="text/javascript">
+/**
+* Returns a random number between min and max
+*/
+function getRandomArb (min, max) {
+return Math.random() * (max - min) + min;
+}
+
+/**
+* Returns a random integer between min and max
+* Using Math.round() will give you a non-uniform distribution!
+*/
+function getRandomInt (min, max) {
+return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+</script>
+
+<!-- formats inline equations -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] }
+});
+</script>
+
+<!-- formats equations -->
+<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'>
+</script>
+
+
+
+</head>
+
+<div id="wrapper" class="hfeed">
+<div id="header">
+<div id="masthead">
+<div id="branding" role="banner">
+
+<div id="site-title">
+<center>
+<h2><span>Physics I</span>
+</div>
+
+
+<div id="site-description">
+<center>
+Linear Motion Infinite Practice Worksheet
+</div>
+</center>
+</h2>
+</div>
+
+
+</div><!-- #branding -->
+</div>
+<div class="clear"></div>
+
+<br/>
+<br/>
+
+<div id="main">
+<div id="container">
+<div id="content" role="main">
+<div id="post-612" class="post-612 page type-page status-publish hentry">
+
+<hr>
+<hr>
+
+<center>
+<h2 class="entry-title">Instructions</h2>
+
+<div class="entry-content">
+                              
+                                
+                                
+                                <p>Solve the following problems; if you need more practice, refresh your browser (or close
+                                and reopen this page) for all new numbers. Treat all givens as though they have two sig figs.</p>
+                                <center>
+                                <h2> Equations</h2>
+                                    
+
+<style>
+
+.btnFormat {
+  color: black;
+  background: white;
+  font-weight: bold;
+  font-size: 70%;
+  border: 1px solid black;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: middle;
+}
+ 
+.btnFormat:hover {
+  color: black;
+  background: #e0ffff;
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6); 
+}
+</style>
+
+<input type="submit" class ="btnFormat" name="hideh1" value="Hide Equations" id="hideh1" /> 
+&nbsp; &nbsp; 
+<input type="submit" class ="btnFormat" name="showh1" value="Show Equations" id="showh1" />
+
+                                    
+                                    
+                                    
+                                    <div class="showhide" id="showhide">
+                                        <p>
+                                        \[ \begin{aligned}
+                                        
+                                        \overline{speed} &amp; = \frac{distance}{t}
+                                        
+                                        \end{aligned} \]
+                                        
+                                        <br>
+                                        \[ \begin{aligned}
+                                        
+                                        \overline{v} &amp; = \frac{\Delta x}{t}
+                                        
+                                        \end{aligned} \]
+                                        
+                                        <br>
+                                        
+                                        \[ \begin{aligned}
+                                        
+                                        a &amp; = \frac{(v_f - v_i)}{t}
+                                        
+                                        \end{aligned} \]
+                                        
+                                        <br>
+                                        
+                                        \[ \begin{aligned}
+                                        
+                                        v_f &amp; = v_i + at
+                                        
+                                        \end{aligned} \]
+                                        <br>
+                                        
+                                        \[ \begin{aligned}
+                                        
+                                        \Delta x &amp; = \overline{v}\times t = \frac{(v_i + v_f)}{2} \times t
+                                        
+                                        \end{aligned} \]
+                                        <br>
+                                        
+                                        \[ \begin{aligned}
+                                        
+                                        \Delta x &amp;= v_i t + \frac{1}{2} a t^2
+                                        
+                                        \end{aligned} \]
+                                        <br>
+                                        \[ \begin{aligned}
+                                        
+                                        \Delta x &amp;= v_f t - \frac{1}{2} a t^2
+                                        
+                                        \end{aligned} \]
+                                        <br>
+
+                                        \[ \begin{aligned}
+                                        
+                                        {v_f} ^2 &amp;= {v_i} ^2 + 2a \Delta x 
+                                        
+                                        \end{aligned} \]
+                                        
+                                    </div>
+                                    
+                                    
+                                    
+                                    <script>
+                                        
+                                        $('#showhide').hide(2600, function() {});
+                                        
+                                        </script>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <script>
+                                        
+                                        $('#showh1').click(function() {
+                                                           
+                                                           $('#showhide').show(2600, function() {});
+                                                           
+                                                           });
+                                                           
+                                                           
+                                                           
+                                                           $('#hideh1').click(function() {
+                                                                              
+                                                                              $('#showhide').hide('slow', function() {});
+                                                                              
+                                                                              });
+                                                                              
+                                        </script>
+                                    
+                                    
+                                    
+                                    <!--
+                                     
+                                     <script>
+                                     
+                                     $(document).ready(function() {
+                                     
+                                     $('#hideh1').click( function() {
+                                     
+                                     $('div.showhide').hide();
+                                     
+                                     });
+                                     
+                                     $('#showh1').click( function() {
+                                     
+                                     $('div.showhide').show();
+                                     
+                                     });
+                                     
+                                     $('#toggleh1').click( function() {
+                                     
+                                     $('div.showhide').toggle();
+                                     
+                                     });
+                                     
+                                     });
+                                     
+                                     </script>
+                                     
+                                     -->
+                                    
+                                    
+                                    
+                                    
+                                    <p>
+                                    <h2> Problems </h2>
+                                    
+                                    
+                                    
+                                    <div class="math-header">1) Constant Velocity Motion I</div>
+                                    
+                                    
+                                    
+                                    <script>
+                                        
+                                        var velocity1 = (getRandomInt(11,99))/10;
+                                        
+                                        var time1 = getRandomInt(11,99)/10;
+                                        
+                                        var displacement1 = velocity1 * time1
+                                        
+                                        </script>
+                                    
+                                    
+                                    
+                                    <p>How far does an object travel if it maintains a constant speed of <script>document.write(velocity1.toPrecision(2))</script> m/s for <script>document.write(time1.toPrecision(2))</script> seconds?
+                                    
+                                    <br/><br/>
+                                    
+                                    
+                                    
+                                    <input type="submit" class ="btnFormat" name="hideh2" value="Hide Solution" id="hideh2" /> <input
+                                    type="submit" class ="btnFormat" name="showh2" value="Show Solution" id="showh2" />
+                                    
+                                    
+                                    
+                                    <div class="showhide2" id="showhide2">
+                                        <p>
+                                        First, list your givens:<br>
+                                        (We'll call the direction of motion the positive direction.)<br><br>
+                                        $v =$ +<script>document.write(velocity1.toPrecision(2))</script> m/s<br>
+                                        $t =$ <script>document.write(time1.toPrecision(2))</script> s<br>
+                                        $a = 0$<br>
+                                        $\Delta x =$ ? 
+                                        <br><br>
+                                        
+                                        We will use the equation
+                                        
+                                        \[ \begin{aligned}
+                                        
+                                        \Delta x &amp;= v_i t + \frac{1}{2} a t^2
+                                        
+                                        \end{aligned} \]
+                                        <br>
+                                        Since the velocity is constant, the acceleration is zero; so we're left with the equation
+                                        \[ \begin{aligned}
+                                        
+                                        \Delta x &amp;= v_i \times t
+                                        
+                                        \end{aligned} \]
+                                        
+                                        and plug in everything that is given, finding that,<br><br>
+                                        
+                                        <center>
+                                            $\Delta x$ = <script>document.write(velocity1.toPrecision(2))</script> m/s $\times$ <script>document.write(time1.toPrecision(2))</script> s = <script>document.write(displacement1.toPrecision(6))</script> m = <SPAN style="BACKGROUND-COLOR: #ffff00"><b><script>document.write(displacement1.toPrecision(2))</script> m</b></span>
+                                        </center>
+                                        
+                                        
+                                    </div>
+                                    
+                                    
+                                    
+                                    <!--
+                                     
+                                     <script>
+                                     
+                                     $('#showhide2').hide(2600, function() {});
+                                     
+                                     </script>
+                                     
+                                     -->
+                                    
+                                    
+                                    
+                                    <script>
+                                        
+                                        $('#showhide2').hide(2600, function() {});
+                                        
+                                        
+                                        
+                                        $('#showh2').click(function() {
+                                                           
+                                                           $('#showhide2').show('slow', function() {});
+                                                           
+                                                           });
+                                                           
+                                                           
+                                                           
+                                                           $('#hideh2').click(function() {
+                                                                              
+                                                                              $('#showhide2').hide('slow', function() {});
+                                                                              
+                                                                              });
+                                                                              
+                                        </script>
+                                    
+                                    
+                                    
+                                    <br/><br/>
+                                    
+                            </div>
+                            
+                            
+                            
+                            </script>
+                            
+                            
+                            
+                            <!-- ############################## -->
+                            
+                            
+                            <div class="math-header">2) Constant Velocity Motion II</div>
+                            
+                            
+                            
+                            <script>
+                                
+                                var velocity2 = (getRandomInt(11,99))/10;
+                                
+                                var displacement2 = getRandomInt(11,99);
+                                
+                                var time2 = displacement2/velocity2
+                                
+                                </script>
+                            
+                            
+                            
+                            <p>How much time would it take you to travel <script>document.write(displacement2.toPrecision(2))</script> m if you were traveling at a constant rate of <script>document.write(velocity2.toPrecision(2))</script> m/s?
+                            
+                            <br/><br/>
+                            
+                            
+                            
+                            <input type="submit" class ="btnFormat" name="hideh3" value="Hide Solution" id="hideh3" /> <input
+                            type="submit" class ="btnFormat" name="showh3" value="Show Solution" id="showh3" />
+                            
+                            
+                            
+                            <div class="showhide3" id="showhide3">
+                                
+                                <br>
+                                First, list your givens:<br>
+                                (We'll call the direction of motion the positive direction.)<br><br>
+                                $\Delta x =$ +<script>document.write(displacement2.toPrecision(2))</script> m<br>
+                                $v =$ +<script>document.write(velocity2.toPrecision(2))</script> m/s<br>
+                                $a = 0$<br>
+                                $t =$ ?
+                                <br><br>
+                                We will use the equation
+                                
+                                \[ \begin{aligned}
+                                
+                                \Delta x &amp;= v_i t + \frac{1}{2} a t^2
+                                
+                                \end{aligned} \]
+                                <br>
+                                Since the velocity is constant, the acceleration is zero; so we're left with the equation
+                                \[ \begin{aligned}
+                                
+                                \Delta x &amp;= v_i \times t
+                                
+                                \end{aligned} \]
+                                
+                                and plug in everything that is given, finding that,<br><br>
+                                
+                                <center>
+                                    <script>document.write(displacement2.toPrecision(2))</script> m = <script>document.write(velocity2.toPrecision(2))</script> m/s $\times$ $t$
+                                </center>
+                                <br><br>
+                                To solve for time we must divide both sides by <script>document.write(velocity2.toPrecision(2))</script> m/s, which gives us
+                                <br><br>
+                                <center>
+                                    $t$ = <script>document.write(displacement2.toPrecision(2))</script> m $\div$ <script>document.write(velocity2.toPrecision(2))</script> m/s = <script>document.write(time2.toPrecision(6))</script> s = <SPAN style="BACKGROUND-COLOR: #ffff00"><b><script>document.write(time2.toPrecision(2))</script> s</b></span>
+                                </center>
+                            </div>
+                            
+                            
+                            
+                            <!--
+                             
+                             <script>
+                             
+                             $('#showhide3').hide(2600, function() {});
+                             
+                             </script>
+                             
+                             -->
+                            
+                            
+                            
+                            <script>
+                                
+                                $('#showhide3').hide(2600, function() {});
+                                
+                                
+                                
+                                $('#showh3').click(function() {
+                                                   
+                                                   $('#showhide3').show('slow', function() {});
+                                                   
+                                                   });
+                                                   
+                                                   
+                                                   
+                                                   $('#hideh3').click(function() {
+                                                                      
+                                                                      $('#showhide3').hide('slow', function() {});
+                                                                      
+                                                                      });
+                                                                      
+                                </script>
+                            
+                            
+                            
+                            <br/>
+                            
+                        </div>
+                        
+                        
+                        
+                        </script>
+                        
+                        
+                        <!-- ############################## -->
+                        
+                        <center>
+                        <div class="math-header">3) Accelerated Motion I</div>
+                        
+                        
+                        
+                        <script>
+                            
+                            var vi3 = (getRandomInt(11,99))/10;
+                            
+                            var t3 = (getRandomInt(11,99))/10;
+                            
+                            var a3 = (getRandomInt(11,99))/10;
+                            
+                            var vf3 = vi3 + a3*t3;
+                            
+                            var d3 = (vi3*t3)+(.5*a3*t3*t3);
+                            
+                            var dround3 = d3.toPrecision(2);
+                            
+                            var dstring3 = dround3.toString();
+                            
+                            var dsci3 = dstring3.replace("e"," x 10^");
+                            
+                            </script>
+                        
+                        
+                        <p>A rocket going <script>document.write(vi3.toPrecision(2))</script> m/s speeds up at a rate of <script>document.write(a3.toPrecision(2))</script> m/s<sup>2</sup> for <script>document.write(t3.toPrecision(2))</script> seconds.<br><br>
+                        a) How fast is the rocket then moving?<br>
+                        b) How far did the rocket travel while it accelerated?
+                        
+                        <br/><br/>
+                        
+                        
+                        
+                        <input type="submit" class ="btnFormat" name="hideh4" value="Hide Solution" id="hideh4" /> <input
+                        type="submit" class ="btnFormat" name="showh4" value="Show Solution" id="showh4" />
+                        
+                        
+                        
+                        <div class="showhide4" id="showhide4">
+                            
+                            
+                            <br><br>
+                            First, list your givens:<br>
+                            (We'll call the direction of motion the positive direction.)<br><br>
+                            $v_i =$ +<script>document.write(vi3.toPrecision(2))</script> m/s<br>
+                            $a =$ +<script>document.write(a3.toPrecision(2))</script> m/s<sup>2</sup><br>
+                            (We know the acceleration is in the same direction as the velocity because the rocket is speeding up;<br>
+                            if the rocket had been slowing down, that would mean the acceleration was in the opposite (i.e. negative) direction.)<br>
+                            $t =$ <script>document.write(t3.toPrecision(2))</script> s
+                            
+                            
+                            
+                            
+                            <br><br>
+                            To solve part (a) we will use the equation
+                            
+                            \[ \begin{aligned}
+                            
+                            v_f = v_i + at
+                            
+                            \end{aligned} \]
+                            <br>
+                            Plugging in we get
+                            <br><br>
+                            
+                            <center>
+                                $v_f$ = <script>document.write(vi3)</script> m/s + <script>document.write(a3)</script> m/s<sup>2</sup> $\times$ <script>document.write(t3)</script> s = <script>document.write(vf3.toPrecision(6))</script> m/s = <SPAN style="BACKGROUND-COLOR: #ffff00"><b><script>document.write(vf3.toPrecision(2))</script> m/s</b></span>
+                            </center>
+                            <br><br>
+                            To solve for (b) we will use the equation<br><br>
+                            <center>$\Delta x = v_i t + \frac{1}{2} a t^2$</center>
+                            <br><br>
+                            Plugging in we get<br><br>
+                            <center>
+                                $\Delta x$ = <script>document.write(vi3)</script> m/s $\times$ <script>document.write(t3)</script> s + .5 $\times$ <script>document.write(a3)</script> m/s<sup>2</sup> $\times$ (<script>document.write(t3)</script> s)<sup>2</sup>
+                                <br>
+                                $\Delta x$ = <script>document.write(d3.toPrecision(6))</script> m = <SPAN style="BACKGROUND-COLOR: #ffff00"><b><script>document.write(dsci3)</script> m</b></span>
+                            </center>
+                        </div>
+                        
+                        
+                        
+                        <!--
+                         
+                         <script>
+                         
+                         $('#showhide4').hide(2600, function() {});
+                         
+                         </script>
+                         
+                         -->
+                        
+                        
+                        
+                        <script>
+                            
+                            $('#showhide4').hide(2600, function() {});
+                            
+                            
+                            
+                            $('#showh4').click(function() {
+                                               
+                                               $('#showhide4').show('slow', function() {});
+                                               
+                                               });
+                                               
+                                               
+                                               
+                                               $('#hideh4').click(function() {
+                                                                  
+                                                                  $('#showhide4').hide('slow', function() {});
+                                                                  
+                                                                  });
+                                                                  
+                            </script>
+                        <br>
+                        
+                        
+                        <br/><br/>
+                        
+                        
+                        
+                        
+                        
+                        </script>
+                        
+                        
+                        <!-- ############################## -->
+                        
+                        <div class="math-header">4) Accelerated Motion II</div>
+                        
+                        
+                        
+                        <script>
+                            
+                            var vi4 = (getRandomInt(23,44));
+                            
+                            var t4 = (getRandomInt(11,55))/10;
+                            
+                            var a4 = -(getRandomInt(11,23))/10;
+                            
+                            var vf4 = vi4 + a4 * t4;
+                            
+                            var d4 = (vi4*t4)+(.5*a4*t4*t4);
+                            
+                            var dround4 = d4.toPrecision(2)
+                            
+                            var dstring4 = dround4.toString();
+                            
+                            var dsci4 = dstring4.replace("e"," x 10^");
+                            
+                            </script>
+                        
+                        
+                        <p>A car driving west at a speed of <script>document.write(vi4.toPrecision(2))</script> m/s accelerates in the eastward direction at a rate of <script>document.write(-a4.toPrecision(2))</script> m/s<sup>2</sup> for <script>document.write(t4.toPrecision(2))</script> seconds.<br><br>
+                        a) How fast and in what direction is the car now moving?<br>
+                        b) How far did the car travel while it accelerated? 
+                        <br><br>
+                        <input type="submit" class ="btnFormat" name="hideh5" value="Hide Solution" id="hideh5" /> <input 
+                        type="submit" class ="btnFormat" name="showh5" value="Show Solution" id="showh5" />
+                        
+                        
+                        
+                        <div class="showhide5" id="showhide5">
+                            
+                            
+                            <br><br>
+                            
+                            Since we have two different directions in this problem, we will need to call one direction positive and one direction negative. 
+                            For this problem, I will call west the positive direction and east the negative direction, but you could just as easily do the opposite.<br>
+                            <br>Next, list your givens:<br><br>
+                            $v_i$ = +<script>document.write(vi4.toPrecision(2))</script> m/s<br>
+                            $a$ = <script>document.write(a4.toPrecision(2))</script> m/s<sup>2</sup><br>
+                            $t$ = <script>document.write(t4.toPrecision(2))</script> s<br><br>
+                            
+                            
+                            To solve part (a) we will use the equation
+                            
+                            \[ \begin{aligned}
+                            
+                            v_f = v_i + at
+                            
+                            \end{aligned} \]
+                            <br>
+                            Plugging in we get:
+                            <br><br>
+                            
+                            <center>
+                                $v_f$ = +<script>document.write(vi4.toPrecision(2))</script> m/s + <script>document.write(a4.toPrecision(2))</script> m/s<sup>2</sup> $\times$ <script>document.write(t4.toPrecision(2))</script> s = +<script>document.write(vf4)</script> m/s = <SPAN style="BACKGROUND-COLOR: #ffff00"><b><script>document.write(vf4.toPrecision(2))</script> m/s</b></span>
+                            </center>
+                            <br>
+                            
+                            <script>
+                                if(vf4>0){document.write("Since the final velocity is positive, and we designated west as the positive direction, that means the direction of the car's final velocity is west.")};
+                                if(vf4<0){document.write("Since the final velocity is negatve, and we designated east as the negative direction, that means that the direction of the car's final velocity is east.")};
+                                </script>
+                            
+                            
+                            <br><br>
+                            To solve for (b) we will use the equation<br><br>
+                            <center>$\Delta x = v_i t + \frac{1}{2} a t^2$</center>
+                            
+                            <br><br>
+                            Plugging in we get<br><br>
+                            <center>
+                                $\Delta x$ = (<script>document.write(vi4.toPrecision(2))</script> m/s $\times$ <script>document.write(t4.toPrecision(2))</script> s) + (.5 $\times$ <script>document.write(a4.toPrecision(2))</script> m/s<sup>2</sup> $\times$ (<script>document.write(t4.toPrecision(2))</script> s)<sup>2</sup>)
+                                <br>
+                                $\Delta x$ = <script>document.write(d4.toPrecision(6))</script> m = <SPAN style="BACKGROUND-COLOR: #ffff00"><b><script>document.write(dsci4)</script> m</b></span></center>
+                            <br><br>
+                            <script>
+                                if(d4>0){document.write("Since the displacement is positive, and we designated west as the positive direction, that means the direction of the car's overall displacement is west.")};
+                                if(d4<0){document.write("Since the displacement is negatve, and we designated east as the negative direction, that means that the direction of the car's overall displacement is east.")};
+                                </script>
+                            
+                            
+                            
+                        </div>
+                        
+                        
+                        
+                        <!--
+                         
+                         <script>
+                         
+                         $('#showhide5').hide(2600, function() {});
+                         
+                         </script>
+                         
+                         -->
+                        
+                        
+                        
+                        <script>
+                            
+                            $('#showhide5').hide(2600, function() {});
+                            
+                            
+                            
+                            $('#showh5').click(function() {
+                                               
+                                               $('#showhide5').show('slow', function() {});
+                                               
+                                               });
+                                               
+                                               
+                                               
+                                               $('#hideh5').click(function() {
+                                                                  
+                                                                  $('#showhide5').hide('slow', function() {});
+                                                                  
+                                                                  });
+                                                                  
+                            </script>
+                        
+                        
+                        
+                        <br/><br/>
+                        
+                        
+                        
+                        
+                        
+                        </script>
+                        <br>
+                        
+                        <!-- ############################## -->
+                        
+                        <div class="math-header">5) Free Fall I</div>
+                        
+                        
+                        
+                        <script>
+                            
+                            var t105 = (getRandomInt(10,99));
+                            
+                            var t5 = t105/10;
+                            
+                            var d5 = (.5*9.8*t5*t5);
+                            
+                            var vf5 = (9.8*t5);
+                            
+                            var dround5 = d5.toPrecision(2);
+                            
+                            var dstring5 = dround5.toString();
+                            
+                            var dsci5 = dstring5.replace("e"," x 10^")
+                            
+                            </script>
+                        
+                        
+                        <p>You drop a pebble from rest off a cliff and find that it takes the pebble <script>document.write(t5.toPrecision(2))</script> seconds to hit the ground. You know that everything in free fall accelerates at a rate of 9.8 m/s<sup>2</sup> down. Ignoring air resistance,<br><br>
+                        a) How fast is the pebble moving when it strikes the ground? and<br>
+                        b) How tall is the cliff? 
+                        
+                        <br/><br/>
+                        
+                        
+                        
+                        <input type="submit" class ="btnFormat" name="hideh6" value="Hide Solution" id="hideh6" /> <input 
+                        type="submit" class ="btnFormat" name="showh6" value="Show Solution" id="showh6" />
+                        
+                        
+                        
+                        <div class="showhide6" id="showhide6">
+                            
+                            
+                            <br><br>
+                            First, list your givens:<br>
+                            (I'm going to make down positive and up negative for this problem.)<br><br>
+                            $v_i =$ 0 m/s (because you dropped the pebble)<br>
+                            $a =$ +9.8 m/s<sup>2</sup><br>
+                            $t =$ <script>document.write(t5.toPrecision(2))</script> s
+                            
+                            
+                            
+                            
+                            <br><br>
+                            To solve part (a) we will use the equation
+                            
+                            \[ \begin{aligned}
+                            
+                            v_f = v_i + at
+                            
+                            \end{aligned} \]
+                            <br>
+                            Plugging in we get
+                            <br><br>
+                            
+                            <center>
+                                $v_f$ = 0 m/s + 9.8 m/s<sup>2</sup> $\times$ <script>document.write(t5)</script> s = +<script>document.write(vf5.toPrecision(6))</script> m/s = <SPAN style="BACKGROUND-COLOR: #ffff00"><b><script>document.write(vf5.toPrecision(2))</script> m/s</b></span> (down)
+                            </center>
+                            <br><br>
+                            To solve for (b) we will use the equation<br><br>
+                            <center>$\Delta x = v_i t + \frac{1}{2} a t^2$</center>
+                            <br><br>
+                            Plugging in we get<br><br>
+                            <center>
+                                $\Delta x$ = 0 m/s $\times$ <script>document.write(t5)</script> s + .5 $\times$ 9.8 m/s<sup>2</sup> $\times$ (<script>document.write(t5)</script> s)<sup>2</sup>
+                                <br>
+                                $\Delta x$ = +<script>document.write(d5.toPrecision(5))</script> m = <SPAN style="BACKGROUND-COLOR: #ffff00"><b><script>document.write(dsci5)</script> m</b></span> 
+                            </center>
+                        </div>
+                        
+                        
+                        
+                        <!--
+                         
+                         <script>
+                         
+                         $('#showhide6').hide(2600, function() {});
+                         
+                         </script>
+                         
+                         -->
+                        
+                        
+                        
+                        <script>
+                            
+                            $('#showhide6').hide(2600, function() {});
+                            
+                            
+                            
+                            $('#showh6').click(function() {
+                                               
+                                               $('#showhide6').show('slow', function() {});
+                                               
+                                               });
+                                               
+                                               
+                                               
+                                               $('#hideh6').click(function() {
+                                                                  
+                                                                  $('#showhide6').hide('slow', function() {});
+                                                                  
+                                                                  });
+                                                                  
+                            </script>
+                        <br>
+                        
+                        
+                        <br/><br/>
+                        
+                        
+                        
+                        
+                        
+                        </script>
+                        
+                        
+                        
+                        
+                        <!-- ############################## -->
+                        
+                        <div class="math-header">6) Free Fall II</div>
+                        
+                        
+                        
+                        <script>
+                            
+                            var t6 = (getRandomInt(10,99))/10;
+                            
+                            var vi6 = (getRandomInt(10,99))/10;
+                            
+                            var d6 = (vi6*t6 +.5*9.8*t6*t6);
+                            
+                            var vf6 = (vi6 + 9.8*t6);
+                            
+                            var dround6 = d6.toPrecision(2);
+                            
+                            var dstring6 = dround6.toString();
+                            
+                            var dsci6 = dstring6.replace("e"," x 10^")
+                            
+                            </script>
+                        
+                        
+                        <p>You throw a ball downward off a building with an initial speed of <script>document.write(vi6.toPrecision(2))</script> m/s and it accelerates downward at a rate of 9.8 m/s<sup>2</sup>. It takes the ball <script>document.write(t6.toPrecision(2))</script> s to hit the ground. Ignoring air resistance,<br><br>
+                        a) How fast is the ball moving when it strikes the ground? and<br>
+                        b) How tall is the building? 
+                        
+                        <br/><br/>
+                        
+                        
+                        
+                        <input type="submit" class ="btnFormat" name="hideh7" value="Hide Solution" id="hideh7" /> <input 
+                        type="submit" class ="btnFormat" name="showh7" value="Show Solution" id="showh7" />
+                        
+                        
+                        
+                        <div class="showhide7" id="showhide7">
+                            
+                            
+                            <br><br>
+                            First, list your givens:<br>
+                            (Since everything's down in this problem, I'm going to make down the positive direction and up the negative direction.)<br><br>
+                            $v_i =$ +<script>document.write(vi6.toPrecision(2))</script> m/s<br>
+                            $a =$ +9.8 m/s<sup>2</sup><br>
+                            $t =$ <script>document.write(t6.toPrecision(2))</script> s<br><br>
+
+                            <br><br>
+                            To solve part (a) we will use the equation
+                            
+                            \[ \begin{aligned}
+                            
+                            v_f = v_i + at
+                            
+                            \end{aligned} \]
+                            <br>
+                            Plugging in we get
+                            <br><br>
+                            
+                            <center>
+                                $v_f$ = <script>document.write(vi6)</script> m/s + 9.8 m/s<sup>2</sup> $\times$ <script>document.write(t6)</script> s = <script>document.write(vf6.toPrecision(6))</script> m/s = <SPAN style="BACKGROUND-COLOR: #ffff00"><b><script>document.write(vf6.toPrecision(2))</script> m/s</b></span>
+                            </center>
+                            <br><br>
+                            To solve for (b) we will use the equation<br><br>
+                            <center>$\Delta x = v_i t + \frac{1}{2} a t^2$</center>
+                            <br><br>
+                            Plugging in we get<br><br>
+                            <center>
+                                $\Delta x$ = <script>document.write(vi6)</script> m/s $\times$ <script>document.write(t6)</script> s + .5 $\times$ 9.8 m/s<sup>2</sup> $\times$ (<script>document.write(t6)</script> s)<sup>2</sup>
+                                <br>
+                                $\Delta x$ = <script>document.write(d6.toPrecision(5))</script> m = <SPAN style="BACKGROUND-COLOR: #ffff00"><b><script>document.write(dsci6)</script> m</b></span>
+                            </center>
+                        </div>
+                        
+                        
+                        
+                        <!--
+                         
+                         <script>
+                         
+                         $('#showhide7').hide(2600, function() {});
+                         
+                         </script>
+                         
+                         -->
+                        
+                        
+                        
+                        <script>
+                            
+                            $('#showhide7').hide(2600, function() {});
+                            
+                            
+                            
+                            $('#showh7').click(function() {
+                                               
+                                               $('#showhide7').show('slow', function() {});
+                                               
+                                               });
+                                               
+                                               
+                                               
+                                               $('#hideh7').click(function() {
+                                                                  
+                                                                  $('#showhide7').hide('slow', function() {});
+                                                                  
+                                                                  });
+                                                                  
+                            </script>
+                        <br>
+                        
+                        
+                        <br/><br/>
+                        
+                        <!-- ############################## -->
+   
+         
+                        
+                        
+                        
+                        <div class="math-header">8) Distance vs. Displacement</div>
+                        
+                        
+                        
+                        <script>
+                            
+                            var t81 = (getRandomInt(11,99));
+                            
+                            var t82 = (getRandomInt(11,99));
+                            
+                            var t83 = (getRandomInt(11,99));
+                            
+                            var d81 = (getRandomInt(11,99))*10;
+                            
+                            var d82 = (getRandomInt(11,99))*10;
+                            
+                            var dist8 = d81+d82;
+                            
+                            var disp8 = Math.abs(d81-d82);
+                            
+                            var totaltime8 = t81 + t82 + t83;
+                            
+                            var avgspeed8 = dist8/totaltime8;
+                            
+                            var avgv8 = disp8/totaltime8;
+                            
+                            
+                            </script>
+                        
+                        
+                        
+                        <p>You travel <script>document.write(d81)</script> m west in <script>document.write(t81.toPrecision(2))</script> s, stop for <script>document.write(t82.toPrecision(2))</script> s, then travel <script>document.write(d82)</script> m east in <script>document.write(t83.toPrecision(2))</script> s. Find:<br><br>
+                        (a) Your distance traveled and<br>
+                        (b) your displacement <br>
+                      
+                        <br/><br/>
+                        
+                        
+                        
+                        <input type="submit" class ="btnFormat" name="hideh9" value="Hide Solution" id="hideh9" /> <input 
+                        type="submit" class ="btnFormat" name="showh9" value="Show Solution" id="showh9" />
+                        
+                        
+                        
+                        <div class="showhide9" id="showhide9">
+                            
+                            <br>
+                            (a) Let's start by finding your distance traveled, which is simply the sum of all the individual distances in the problem.<br><br>
+                            $distance =$ <script>document.write(d81)</script> m $+$ <script>document.write(d82)</script> m $=$ <SPAN style="BACKGROUND-COLOR: #ffff00"><b><script>document.write(dist8)</script> m</b></span><br><br>
+                            
+                            (b) Displacement is a little trickier since it's a vector. Since you walked in two opposite directions, we'll subtract the distances and use the direction of the bigger vector.<br><br>
+                            
+                            $displacement =$ $\lvert$<script>document.write(d81)</script> m $-$ <script>document.write(d82)</script> m $\rvert =$ <SPAN style="BACKGROUND-COLOR: #ffff00"><b><script>document.write(disp8)</script> m 
+                                <script>if(d81>d82){document.write("west")};
+                                    if(d82>d81){document.write("east")}
+                                    </script>
+                            </b></span><br>
+                            
+                            <script>
+                                if(d81>d82){document.write("(Since you traveled further west than east, the direction of your displacement is west.)")};
+                                if(d82>d81){document.write("(Since you traveled further east than west, the direction of your displacement is east.)")};
+                                </script>
+                            <br><br>
+                         
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                </div>
+                        
+                        
+                        
+                        <!--
+                         
+                         <script>
+                         
+                         $('#showhide9').hide(2600, function() {});
+                         
+                         </script>
+                         
+                         -->
+                        
+                        
+                        
+                        <script>
+                            
+                            $('#showhide9').hide(2600, function() {});
+                            
+                            
+                            
+                            $('#showh9').click(function() {
+                                               
+                                               $('#showhide9').show('slow', function() {});
+                                               
+                                               });
+                                               
+                                               
+                                               
+                                               $('#hideh9').click(function() {
+                                                                  
+                                                                  $('#showhide9').hide('slow', function() {});
+                                                                  
+                                                                  });
+                                                                  
+                            </script>
+                        
+                        
+                        
+                        <br/>
+                        
+                        
+                        
+                        
+                        </script>
+                        
+                        
+                        <!-- ############################## -->
+                        
+                        
+                        
+                    </div>
+                    
+                    
+                    <p style="font-size:xx-small; color:gray; text-align:center;">
+                    
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img 
+                        alt="Creative Commons License" style="border-width:0" 
+                        src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br /><span 
+                            xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Infinite Worksheet</span> by <a 
+                                xmlns:cc="http://creativecommons.org/ns#" href="http://www.physics.drexel.edu/~tim" 
+                                property="cc:attributionName" rel="cc:attributionURL">Timothy Jones</a> and Sara Carmichael is licensed 
+                            under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-
+                                sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 
+                                Unported License</a>.
+                            
+                            <br/>
+                            
+                            This software incorporates the MathJax TEX and CSS libraries and JQuery
+                            
+                            Google API.</p>
+                            
+</center>                            
+                            
+</html>
+
